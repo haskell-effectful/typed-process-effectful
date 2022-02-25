@@ -1,6 +1,15 @@
+{-|
+Module      : Effectful.Process.Typed
+Description : effectful bindings for typed-process
+Copyright   : (c) 2022 Dominik Peteler
+License     : BSD-3-Clause
+Stability   : stable
+
+This module provides [effectful](https://hackage.haskell.org/package/effectful)
+bindings for [typed-process](https://hackage.haskell.org/package/typed-process).
+-}
 {-# OPTIONS_GHC -fno-warn-dodgy-imports #-}
 {-# LANGUAGE TypeFamilies #-}
-
 module Effectful.Process.Typed
   ( -- * Process effect
     TypedProcess

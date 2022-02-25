@@ -30,8 +30,6 @@ common language
 library
   import: language
 
-  ghc-options: -rtsopts -threaded -with-rtsopts=-N
-
   hs-source-dirs: src
 
   exposed-modules:

@@ -23,6 +23,7 @@ author:             Dominik Peteler
 maintainer:         Dominik Peteler
 license:            BSD-3-Clause
 build-type:         Simple
+tested-with:        GHC ==8.10.7 || ==9.0.2 || ==9.2.2
 extra-source-files:
   CHANGELOG.md
   LICENSE.md

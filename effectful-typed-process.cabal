@@ -1,60 +1,58 @@
-cabal-version:    3.0
-name:             effectful-typed-process
-version:          0.0.1.0
-homepage:         https://github.com/haskell-effectful/effectful-contrib#readme
-bug-reports:      https://github.com/haskell-effectful/effectful-contrib/issues
-author:           Dominik Peteler
-maintainer:       Dominik Peteler
-license:          BSD-3-Clause
-build-type:       Simple
+cabal-version:      3.0
+name:               effectful-typed-process
+version:            0.0.1.0
+homepage:
+  https://github.com/haskell-effectful/effectful-typed-process#readme
+
+bug-reports:
+  https://github.com/haskell-effectful/effectful-typed-process/issues
+
+author:             Dominik Peteler
+maintainer:         Dominik Peteler
+license:            BSD-3-Clause
+build-type:         Simple
 extra-source-files:
-    CHANGELOG.md
-    LICENSE.md
-    README.md
+  CHANGELOG.md
+  LICENSE.md
+  README.md
 
 source-repository head
-  type: git
-  location: https://github.com/haskell-effectful/effectful-contrib
+  type:     git
+  location:
+    https://github.com/haskell-effectful/effectful-typed-process
 
 common language
-  ghc-options: -Wall -Wcompat
-
-  default-language: Haskell2010
-
-  default-extensions:  DataKinds
-                       FlexibleContexts
-                       GADTs
-                       KindSignatures
-                       TypeOperators
+  ghc-options:        -Wall -Wcompat
+  default-language:   Haskell2010
+  default-extensions:
+    DataKinds
+    FlexibleContexts
+    GADTs
+    KindSignatures
+    TypeOperators
 
 library
-  import: language
-
-  hs-source-dirs: src
-
-  exposed-modules:
-    Effectful.Process.Typed
-
-  build-depends:    base <= 4.17
-                  , bytestring
-                  , typed-process
-                  , effectful-core
+  import:          language
+  hs-source-dirs:  src
+  exposed-modules: Effectful.Process.Typed
+  build-depends:
+    , base            <=4.17
+    , bytestring
+    , effectful-core
+    , typed-process
 
 test-suite effectful-typed-process-test
-  import: language
-
+  import:         language
   ghc-options:    -rtsopts -threaded -with-rtsopts=-N
-
-  build-depends:    base
-                  , effectful
-                  , effectful-core
-                  , effectful-typed-process
-                  , tasty
-                  , tasty-hunit
+  build-depends:
+    , base
+    , effectful
+    , effectful-core
+    , effectful-typed-process
+    , tasty
+    , tasty-hunit
 
   hs-source-dirs: test
-
   type:           exitcode-stdio-1.0
   main-is:        Main.hs
-  other-modules:
-    Utils
+  other-modules:  Utils

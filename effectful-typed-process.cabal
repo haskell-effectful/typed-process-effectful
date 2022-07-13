@@ -1,5 +1,5 @@
 cabal-version:      3.0
-name:               effectful-typed-process
+name:               typed-process-effectful
 version:            0.0.1.0
 synopsis:
   A binding of the @typed-process@ library for the @effectful@ effect system.
@@ -14,10 +14,10 @@ description:
 
 category:           System
 homepage:
-  https://github.com/haskell-effectful/effectful-typed-process#readme
+  https://github.com/haskell-effectful/typed-process-effectful#readme
 
 bug-reports:
-  https://github.com/haskell-effectful/effectful-typed-process/issues
+  https://github.com/haskell-effectful/typed-process-effectful/issues
 
 author:             Dominik Peteler
 maintainer:         Dominik Peteler
@@ -31,7 +31,7 @@ extra-source-files:
 source-repository head
   type:     git
   location:
-    https://github.com/haskell-effectful/effectful-typed-process
+    https://github.com/haskell-effectful/typed-process-effectful
 
 common language
   ghc-options:        -Wall -Wcompat
@@ -53,14 +53,14 @@ library
     , effectful-core ^>=1.0.0.0
     , typed-process
 
-test-suite effectful-typed-process-test
+test-suite typed-process-effectful-test
   import:         language
   ghc-options:    -rtsopts -threaded -with-rtsopts=-N
   build-depends:
     , base
     , effectful
     , effectful-core
-    , effectful-typed-process
+    , typed-process-effectful
     , tasty
     , tasty-hunit
 

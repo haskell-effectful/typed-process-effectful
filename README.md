@@ -1,4 +1,4 @@
-# effectful-typed-process 
+# typed-process-effectful
 
 ## Description
 

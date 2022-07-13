@@ -65,9 +65,12 @@ import System.Process.Typed as Reexport hiding
   )
 
 import Data.ByteString.Lazy (ByteString)
-import Effectful
-import Effectful.Dispatch.Static
 import qualified System.Process.Typed as PT
+
+import Effectful.Internal.Effect
+import Effectful.Internal.Monad
+import Effectful (Dispatch(..), DispatchOf)
+import Effectful.Dispatch.Static (SideEffects(..))
 
 -- | An effect for running child processes using the @typed-process@ library.
 data TypedProcess :: Effect

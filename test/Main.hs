@@ -13,7 +13,7 @@ import Test.Tasty.HUnit (Assertion, testCase)
 import Test.Tasty (defaultMain, testGroup)
 
 main :: IO ()
-main = defaultMain $ testGroup "effectful-typed-process"
+main = defaultMain $ testGroup "typed-process-effectful"
   [ testCase "Existing executable" testExistingExecutable
   , testCase "Non-existent executable" testNonExistentExecutable
   , testCase "Continue process execution" testContinueProcessExecution
@@ -52,18 +52,18 @@ testContinueProcessExecution = runEff $ do
 testTerminateProcess :: Assertion
 testTerminateProcess = runEff $ do
   let action =  runTemporary . runTypedProcess $ do
-        withSystemTempFile "effectful-typed-process-test" $ \fp h -> do
+        withSystemTempFile "typed-process-effectful-test" $ \fp h -> do
           let pc = setStdout (useHandleClose h)
                  $ shell "sleep 1; printf 'Output'"
           withProcessTerm pc (const $ pure ())
           liftIO $ readFile fp
-  result <- action 
-  U.assertEqual "" "" result 
+  result <- action
+  U.assertEqual "" "" result
 
 testWaitForProcess :: Assertion
 testWaitForProcess = runEff $ do
   let action =  runTemporary . runTypedProcess $ do
-        withSystemTempFile "effectful-typed-process-test" $ \fp h -> do
+        withSystemTempFile "typed-process-effectful-test" $ \fp h -> do
           let pc = setStdout (useHandleClose h)
                  $ shell "sleep 1; printf 'Output'"
           withProcessWait pc (const $ pure ())

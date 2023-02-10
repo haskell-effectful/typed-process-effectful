@@ -28,6 +28,8 @@ extra-source-files:
   LICENSE.md
   README.md
 
+tested-with: GHC==9.2.2, GHC==9.0.2, GHC==8.10.7
+
 source-repository head
   type:     git
   location:

@@ -2,6 +2,8 @@ branches:       main
 
 doctest:        <9.3
 hlint:          True
-hlint-version:  >=3.3 && <3.5
+hlint-version:  >=3.3 && <3.6
 tests:          True
 benchmarks:     True
+
+ghcup-jobs: True

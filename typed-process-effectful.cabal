@@ -1,6 +1,6 @@
-cabal-version:      3.0
-name:               typed-process-effectful
-version:            0.0.1.0
+cabal-version:   3.0
+name:            typed-process-effectful
+version:         1.0.0.0
 synopsis:
   A binding of the @typed-process@ library for the @effectful@ effect system.
 
@@ -12,24 +12,23 @@ description:
   implementation relies on
   [`typed-process`][https://hackage.haskell.org/package/typed-process] instead.
 
-category:           System
+category:        System
 homepage:
   https://github.com/haskell-effectful/typed-process-effectful#readme
 
 bug-reports:
   https://github.com/haskell-effectful/typed-process-effectful/issues
 
-author:             Dominik Peteler
-maintainer:         hackage+typed-process-effectful@with-h.at
-license:            BSD-3-Clause
-build-type:         Simple
+author:          Dominik Peteler
+maintainer:      hackage+typed-process-effectful@with-h.at
+license:         BSD-3-Clause
+build-type:      Simple
 extra-doc-files:
   CHANGELOG.md
   LICENSE.md
   README.md
 
-tested-with:
-  GHC ==8.10.7 || ==9.0.2 || ==9.2.7 || ==9.4.4 || ==9.6.1
+tested-with:     GHC ==8.10.7 || ==9.0.2 || ==9.2.7 || ==9.4.4 || ==9.6.1
 
 source-repository head
   type:     git
@@ -64,8 +63,8 @@ test-suite typed-process-effectful-test
     , base
     , effectful
     , effectful-core
-    , tasty
-    , tasty-hunit
+    , tasty                    >=1.4  && <1.5
+    , tasty-hunit              >=0.10 && <0.11
     , typed-process-effectful
 
   hs-source-dirs: test

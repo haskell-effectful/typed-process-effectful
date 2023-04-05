@@ -71,23 +71,27 @@ import System.Process.Typed as Reexport hiding
 import Data.ByteString.Lazy (ByteString)
 import qualified System.Process.Typed as PT
 
-import Effectful.Internal.Effect
-import Effectful.Internal.Monad
-import Effectful (Dispatch(..), DispatchOf)
-import Effectful.Dispatch.Static (SideEffects(..))
+import Effectful
+import qualified Effectful.Process
+import Effectful.Dispatch.Static
 
 #if ! MIN_VERSION_typed_process(0,2,8)
 import System.Exit (ExitCode(..))
 #endif
 
--- | An effect for running child processes using the @typed-process@ library.
-data TypedProcess :: Effect
+----------------------------------------
+-- Effect & Handler
 
-type instance DispatchOf TypedProcess = 'Static 'WithSideEffects
-data instance StaticRep TypedProcess = TypedProcess
+-- | We provide a type synonym for the 'Effectful.Process.Process' effect since
+-- it clashes with 'PT.Process' type of @typed-process@.
+type TypedProcess = Effectful.Process.Process
 
+-- | This is merely an alias for 'Effectful.Process.runProcess' since that name
+-- clashes with 'runProcess', i.e.:
+--
+-- > runTypedProcess = Effectful.Process.runProcess
 runTypedProcess :: IOE :> es => Eff (TypedProcess : es) a -> Eff es a
-runTypedProcess = evalStaticRep TypedProcess
+runTypedProcess = Effectful.Process.runProcess
 
 ----------------------------------------
 -- Launch a process

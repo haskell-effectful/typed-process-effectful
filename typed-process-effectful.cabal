@@ -20,10 +20,10 @@ bug-reports:
   https://github.com/haskell-effectful/typed-process-effectful/issues
 
 author:             Dominik Peteler
-maintainer:         Dominik Peteler
+maintainer:         hackage+typed-process-effectful@with-h.at
 license:            BSD-3-Clause
 build-type:         Simple
-extra-source-files:
+extra-doc-files:
   CHANGELOG.md
   LICENSE.md
   README.md

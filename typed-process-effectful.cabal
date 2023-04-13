@@ -28,7 +28,8 @@ extra-source-files:
   LICENSE.md
   README.md
 
-tested-with: GHC==9.2.2, GHC==9.0.2, GHC==8.10.7
+tested-with:
+  GHC ==8.10.7 || ==9.0.2 || ==9.2.7 || ==9.4.4 || ==9.6.1
 
 source-repository head
   type:     git
@@ -50,10 +51,10 @@ library
   hs-source-dirs:  src
   exposed-modules: Effectful.Process.Typed
   build-depends:
-    , base            <=4.17
-    , bytestring
-    , effectful-core  >=1.0 && <2.3
-    , typed-process
+    , base            >=4.14  && <5
+    , bytestring      <0.12
+    , effectful-core  >=2.0   && <2.3
+    , typed-process   >=0.2.5 && <0.3
 
 test-suite typed-process-effectful-test
   import:         language

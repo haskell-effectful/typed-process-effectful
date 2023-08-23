@@ -2,7 +2,7 @@ cabal-version:   3.0
 name:            typed-process-effectful
 version:         1.0.0.0
 synopsis:
-  A binding of the @typed-process@ library for the @effectful@ effect system.
+  A binding of the typed-process library for the effectful effect system.
 
 description:
   This library provides an alternative `Process` effect for the

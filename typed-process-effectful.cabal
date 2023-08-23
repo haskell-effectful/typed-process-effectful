@@ -6,11 +6,11 @@ synopsis:
 
 description:
   This library provides an alternative `Process` effect for the
-  [`effectful`][https://github.com/haskell-effectful/effectful] ecosystem.
+  [effectful](https://github.com/haskell-effectful/effectful) ecosystem.
   While to the `Process` effect shipped with the `effectful` library is based on
-  the [`process`][https://hackage.haskell.org/package/process] package this
+  the [process](https://hackage.haskell.org/package/process) package this
   implementation relies on
-  [`typed-process`][https://hackage.haskell.org/package/typed-process] instead.
+  [typed-process](https://hackage.haskell.org/package/typed-process) instead.
 
 category:        System
 homepage:

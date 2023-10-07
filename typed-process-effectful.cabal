@@ -52,8 +52,8 @@ library
   build-depends:
     , base            >=4.14  && <5
     , bytestring      <0.12
-    , effectful       >=2.0   && <2.3
-    , effectful-core  >=2.0   && <2.3
+    , effectful       >=2.0   && <2.4
+    , effectful-core  >=2.0   && <2.4
     , typed-process   >=0.2.5 && <0.3
 
 test-suite typed-process-effectful-test

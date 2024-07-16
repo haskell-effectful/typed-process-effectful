@@ -25,9 +25,5 @@ jobs:
     - name: 'Run hlint'
       uses: haskell-actions/hlint-run@v2
       with:
-        path: |
-          [ "src/"
-          , "example/"
-          , "test/"
-          ]
+        path: '[ "src/", "example/", "test/" ]'
         fail-on: suggestion

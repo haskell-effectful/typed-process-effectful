@@ -59,7 +59,7 @@ library
     bytestring <0.13,
     effectful >=2.0 && <2.4,
     effectful-core >=2.0 && <2.4,
-    typed-process >=0.2.5 && <0.3,
+    typed-process >=0.2.8 && <0.3,
 
 test-suite typed-process-effectful-test
   import: language

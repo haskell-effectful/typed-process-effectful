@@ -8,8 +8,6 @@ Stability   : stable
 This module provides [effectful](https://hackage.haskell.org/package/effectful)
 bindings for [typed-process](https://hackage.haskell.org/package/typed-process).
 -}
-{-# OPTIONS_GHC -fno-warn-dodgy-imports #-}
-{-# LANGUAGE CPP #-}
 {-# LANGUAGE TypeFamilies #-}
 module Effectful.Process.Typed
   ( -- * Process effect
@@ -41,9 +39,6 @@ module Effectful.Process.Typed
 
   -- * Re-exports from "System.Process.Typed"
   , module Reexport
-#if ! MIN_VERSION_typed_process(0,2,8)
-  , ExitCode(..)
-#endif
   ) where
 
 import System.Process.Typed as Reexport hiding
@@ -74,10 +69,6 @@ import qualified System.Process.Typed as PT
 import Effectful
 import qualified Effectful.Process
 import Effectful.Dispatch.Static
-
-#if ! MIN_VERSION_typed_process(0,2,8)
-import System.Exit (ExitCode(..))
-#endif
 
 ----------------------------------------
 -- Effect & Handler

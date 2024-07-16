@@ -29,7 +29,7 @@ extra-doc-files:
   LICENSE.md
   README.md
 
-tested-with: ghc ==8.10.7 || ==9.0.2 || ==9.2.8 || ==9.4.7 || ==9.6.3
+tested-with: ghc ==8.10.7 || ==9.0.2 || ==9.2.8 || ==9.4.8 || ==9.6.6 || ==9.8.2 || ==9.10.1
 
 source-repository head
   type: git

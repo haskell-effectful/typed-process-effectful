@@ -1,0 +1,32 @@
+name: Linters
+on:
+  - push
+  - pull_request
+jobs:
+  hlint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Checkout repository'
+      uses: actions/checkout@v4
+
+    - name: 'Set up cabal-gild'
+      uses: tfausak/cabal-gild-setup-action@v2
+
+    - name: 'Set up hlint'
+      uses: haskell-actions/hlint-setup@v2
+
+    - name: 'Run cabal-gild'
+      run: cabal-gild --mode check --input typed-process-effectful.cabal
+
+    - name: 'Run fourmolu'
+      uses: haskell-actions/run-fourmolu@v10
+
+    - name: 'Run hlint'
+      uses: haskell-actions/hlint-run@v2
+      with:
+        path:
+        - src/
+        - example/
+        - test/
+        fail-on: suggestion

@@ -51,7 +51,7 @@ library
   exposed-modules: Effectful.Process.Typed
   build-depends:
     , base            >=4.14  && <5
-    , bytestring      <0.12
+    , bytestring      <0.13
     , effectful       >=2.0   && <2.4
     , effectful-core  >=2.0   && <2.4
     , typed-process   >=0.2.5 && <0.3
@@ -63,7 +63,7 @@ test-suite typed-process-effectful-test
     , base
     , effectful
     , effectful-core
-    , tasty                    >=1.4  && <1.5
+    , tasty                    >=1.4  && <1.6
     , tasty-hunit              >=0.10 && <0.11
     , typed-process-effectful
 

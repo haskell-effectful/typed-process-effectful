@@ -1,9 +1,6 @@
 branches:       main
 
-doctest:        <9.3
-hlint:          True
-hlint-job:      9.4.7
-hlint-version:  >=3.3 && <3.6
+doctest:        <9.9
 tests:          True
 benchmarks:     True
 

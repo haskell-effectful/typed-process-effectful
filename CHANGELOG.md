@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v1.0.0.2 (????-??-??)
+## v1.0.0.2 (2024-07-16)
 * Bumped upper bounds for bytestring and tasty dependency.
 
 ## v1.0.0.1 (2023-10-07)

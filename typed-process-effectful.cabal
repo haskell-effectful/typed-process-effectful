@@ -23,11 +23,14 @@ author: Dominik Peteler
 maintainer: hackage+typed-process-effectful@with-h.at
 license: BSD-3-Clause
 build-type: Simple
--- cabal-gild: discover ./ --include=LICENSE --include=*.md
+-- cabal-gild: discover . --include=*.md
 extra-doc-files:
   CHANGELOG.md
   LICENSE.md
   README.md
+
+extra-source-files:
+  LICENSE.md
 
 tested-with: ghc ==8.10.7 || ==9.0.2 || ==9.2.8 || ==9.4.8 || ==9.6.6 || ==9.8.2 || ==9.10.1
 
@@ -57,8 +60,7 @@ library
   build-depends:
     base >=4.14 && <5,
     bytestring <0.13,
-    effectful >=2.0 && <2.4,
-    effectful-core >=2.0 && <2.4,
+    effectful >=2.0 && <2.6,
     typed-process >=0.2.8 && <0.3,
 
 test-suite typed-process-effectful-test
@@ -71,7 +73,6 @@ test-suite typed-process-effectful-test
   build-depends:
     base,
     effectful,
-    effectful-core,
     tasty >=1.4 && <1.6,
     tasty-hunit >=0.10 && <0.11,
     typed-process-effectful,

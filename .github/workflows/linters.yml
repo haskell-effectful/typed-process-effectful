@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: 'Run fourmolu'
-      uses: haskell-actions/run-fourmolu@v10
+      uses: haskell-actions/run-fourmolu@v11
 
   hlint:
     runs-on: ubuntu-latest

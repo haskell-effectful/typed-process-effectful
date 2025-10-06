@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.0.4 (2025-10-06)
+* Bumped upper bounds of effectful dependency.
+* Dropped support for GHC <9.2 and base <4.16.
+
 ## v1.0.0.3 (2024-10-31)
 * Bumped upper bounds of effectful dependency.
   Also removed effectful-core dependency.

@@ -60,7 +60,7 @@ library
   build-depends:
     base >=4.16 && <5,
     bytestring <0.13,
-    effectful >=2.0 && <2.6,
+    effectful >=2.0 && <2.7,
     typed-process >=0.2.8 && <0.3,
 
 test-suite typed-process-effectful-test

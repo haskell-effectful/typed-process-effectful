@@ -8,7 +8,7 @@ jobs:
 
     steps:
     - name: 'Checkout repository'
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: 'Set up cabal-gild'
       uses: tfausak/cabal-gild-setup-action@v2
@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: 'Checkout repository'
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: 'Run fourmolu'
       uses: haskell-actions/run-fourmolu@v11
@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: 'Checkout repository'
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: 'Set up hlint'
       uses: haskell-actions/hlint-setup@v2

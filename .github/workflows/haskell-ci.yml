@@ -8,9 +8,9 @@
 #
 # For more information, see https://github.com/haskell-CI/haskell-ci
 #
-# version: 0.19.20250917
+# version: 0.19.20260624
 #
-# REGENDATA ("0.19.20250917",["github","cabal.project"])
+# REGENDATA ("0.19.20260624",["github","cabal.project"])
 #
 name: Haskell-CI
 on:
@@ -23,6 +23,8 @@ on:
   merge_group:
     branches:
       - main
+  workflow_dispatch:
+    {}
 jobs:
   linux:
     name: Haskell-CI - Linux - ${{ matrix.compiler }}
@@ -35,9 +37,14 @@ jobs:
     strategy:
       matrix:
         include:
-          - compiler: ghc-9.12.2
+          - compiler: ghc-9.14.1
             compilerKind: ghc
-            compilerVersion: 9.12.2
+            compilerVersion: 9.14.1
+            setup-method: ghcup
+            allow-failure: false
+          - compiler: ghc-9.12.4
+            compilerKind: ghc
+            compilerVersion: 9.12.4
             setup-method: ghcup
             allow-failure: false
           - compiler: ghc-9.10.3
@@ -146,9 +153,9 @@ jobs:
         run: |
           $CABAL v2-update -v
       - name: cache (tools)
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
-          key: ${{ runner.os }}-${{ matrix.compiler }}-tools-54f36d55
+          key: ${{ runner.os }}-${{ matrix.compiler }}-tools-1799850d
           path: ~/.haskell-ci-tools
       - name: install cabal-plan
         run: |
@@ -165,12 +172,12 @@ jobs:
           if [ $((HCNUMVER < 91000)) -ne 0 ] ; then doctest --version ; fi
       - name: save cache (tools)
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
-          key: ${{ runner.os }}-${{ matrix.compiler }}-tools-54f36d55
+          key: ${{ runner.os }}-${{ matrix.compiler }}-tools-1799850d
           path: ~/.haskell-ci-tools
       - name: checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           path: source
       - name: initial cabal.project for sdist
@@ -210,7 +217,7 @@ jobs:
           $CABAL v2-build $ARG_COMPILER $ARG_TESTS $ARG_BENCH --dry-run all
           cabal-plan
       - name: restore cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           key: ${{ runner.os }}-${{ matrix.compiler }}-${{ github.sha }}
           path: ~/.cabal/store
@@ -245,7 +252,7 @@ jobs:
           $CABAL v2-build $ARG_COMPILER --disable-tests --disable-benchmarks all
       - name: save cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           key: ${{ runner.os }}-${{ matrix.compiler }}-${{ github.sha }}
           path: ~/.cabal/store
